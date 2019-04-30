@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.codepath.apps.restclienttemplate.models.GlideApp;
@@ -63,7 +64,7 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
         return mTweets.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener  {
 
         public ImageView ivProfileImage;
         public TextView tvUsername, tvBody;
@@ -75,6 +76,15 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
             tvUsername = itemView.findViewById(R.id.tvUsername);
             tvBody = itemView.findViewById(R.id.tvBody);
 
+
+        }
+
+        @Override
+        public void onClick(View v) {
+            int position = getAdapterPosition(); // gets item position
+            if (position != RecyclerView.NO_POSITION) { // Check if an item was deleted, but the user clicked it before the UI removed it
+//                Tweet tweet = .get(position);
+            }
 
         }
     }
